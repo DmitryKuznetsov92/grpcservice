@@ -12,7 +12,7 @@ import java.util.Map;
 @GrpcService
 public class RpcTestClass extends RpcServiceGrpc.RpcServiceImplBase {
 
-    private Map<Integer, TestResponse> availableTest = Map.of(
+    private final Map<Integer, TestResponse> availableTest = Map.of(
             1, TestResponse.newBuilder()
                     .setId(1)
                     .setName("one")
