@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package org.example;
+
+import "google/protobuf/empty.proto";
+
+option java_multiple_files = true;
+
+service RpcService {
+  rpc GetTest (TestRequest) returns (TestResponse) {}
+  rpc GetAllTest (google.protobuf.Empty) returns (stream TestResponse) {}
+}
+
+message TestRequest {
+  int32 id = 1;
+}
+
+message TestResponse {
+  int32 id = 1;
+  string name = 2;
+  string descr = 3;
+}
